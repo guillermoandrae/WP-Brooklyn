@@ -4,7 +4,7 @@ Theme URI:	http://www.griasolutions.com
 Description: 	Just write.
 Author: 	Gria Solutions, LLC
 Author URI: 	http://www.griasolutions.com
-Version: 	1.1
+Version: 	1.2
 */
 
 article, time, header, footer, nav, article, aside {
@@ -111,7 +111,7 @@ footer {
 }
 
 #branding h1 {
-	background: url("img/icon-home.png") 25px center no-repeat;
+	background: url("assets/img/icon-home.png") 25px center no-repeat;
 	float: left;
 	font-size: 12px;
 	padding: 3px 0 0 50px;
@@ -314,7 +314,7 @@ article footer p {
 }
 
 .credits {
-	background: url("img/icon-tools.png") 5px center no-repeat;
+	background: url("assets/img/icon-tools.png") 5px center no-repeat;
 	padding-left: 30px;
 }
 
@@ -323,7 +323,7 @@ article footer p {
 }
 
 #searchform input {
-	background: #eee url("img/icon-search.png") 95% center no-repeat;
+	background: #eee url("assets/img/icon-search.png") 95% center no-repeat;
 	border: 0;
 	font-family: Ruda, "Helvetica Neue", Helvetica, sans-serif;
 	font-size: 14px;
