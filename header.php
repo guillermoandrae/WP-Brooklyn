@@ -6,8 +6,7 @@
 <meta name="robots" content="index, follow" />
 <meta name="description" content="<?php bloginfo( 'description' ); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-<link rel="shortcut icon" href="<?php bloginfo( 'stylesheet_directory' ); ?>/favicon.ico" />
-<link rel="apple-touch-icon" href="<?php bloginfo( 'stylesheet_directory' ); ?>/apple-touch-icon.png" />
+<link rel="shortcut icon" href="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/img/favicon.ico" />
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
