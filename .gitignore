@@ -1,5 +1,4 @@
 *.log
-*.cache
 .idea
 *.iml
 nbproject
