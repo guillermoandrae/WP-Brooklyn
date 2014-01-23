@@ -1,0 +1,52 @@
+@import "variables.less";
+
+.title(@font-size) {
+  font-family: @title-font-stack;
+  font-size: @font-size;
+  font-weight: 300;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.transparent(@red, @green, @blue) {
+  background-color: rgba(@red, @green, @blue, .1);
+}
+
+.link-box() {
+  border: 2px solid #ddd;
+  color: #ddd;
+  display: inline-block;
+  font-weight: bold;
+  letter-spacing: 2px;
+  padding: 15px 25px;
+  text-transform: uppercase;
+  &:hover {
+    background: #ddd;
+    color: #333;
+  }
+}
+
+.nav-icon(){
+  text-shadow: none;
+  color: #ddd;
+  cursor: pointer;
+  &:hover {
+    border: 0;
+    color: @brooklyn-blue;
+  }
+}
+
+.text-shadow() {
+  text-shadow: 1px 3px 3px @brooklyn-blue;
+}
+
+.box-shadow() {
+  box-shadow: 0 5px 2px -1px rgba(0, 0, 0, .7);
+  -moz-box-shadow: 0 5px 2px -1px rgba(0, 0, 0, .7);
+  -webkit-box-shadow: 0 5px 2px -1px rgba(0, 0, 0, .7);
+}
+
+.non-breaking() {
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
+}

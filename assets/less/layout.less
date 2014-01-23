@@ -1,0 +1,153 @@
+@import "variables.less";
+@import "mixins.less";
+
+article, time, header, footer, nav, article, aside {
+  display: block;
+}
+
+body {
+  background: #333 url("assets/img/bg.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  color: #ccc;
+  font-family: @content-font-stack;
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+.shadow {
+  .box-shadow();
+}
+
+article {
+  width: 100%;
+}
+
+a {
+  color: #ddd;
+  text-decoration: none;
+  &:hover {
+    border-bottom: 1px solid @brooklyn-blue;
+  }
+}
+
+p a {
+  .text-shadow();
+}
+
+input, textarea, select {
+  border: 0;
+  background: #444;
+  color: @content-color;
+  font-family: @content-font-stack;
+  font-size: 1em;
+  padding: 10px;
+}
+
+blockquote {
+  .transparent(0, 0, 0);
+  border-left: 5px solid @divider-color;
+  color: #777;
+  font-style: italic;
+  padding: 15px;
+}
+
+code, kbd, pre, tt {
+  .transparent(255, 255, 255);
+  color: #ccc;
+  font-family: @code-font-stack;
+  font-size: .15;
+  padding: 3px 6px;
+}
+
+abbr, acronym {
+  border-bottom: 1px dotted #aaa;
+}
+
+acronym {
+  font-variant: small-caps;
+  letter-spacing: 2px;
+}
+
+pre {
+  padding: 20px;
+}
+
+.container {
+  margin: 0 auto;
+  width: 800px;
+}
+
+div[role="main"] {
+  margin: 100px auto 0;
+  padding: 0 15px;
+}
+
+footer {
+  clear: both;
+  font-family: @content-font-stack;
+}
+
+#footer {
+  border-top: 1px solid @divider-color;
+  clear: both;
+  color: @muted-content-color;
+  float: left;
+  font-size: .75em;
+  margin: 25px 0 0;
+  padding: 25px 0;
+  text-align: center;
+  width: 100%;
+
+  .social-icons {
+    display: block;
+    margin-top: 1em;
+
+    a {
+      .nav-icon();
+      margin: 0 1em 0;
+    }
+
+  }
+
+  p {
+    line-height: 1.5;
+    margin: 0 0 10px;
+    width: auto;
+  }
+
+  a {
+    color: #888;
+  }
+
+}
+
+#searchform {
+  margin: 0 0 10px;
+}
+
+#searchform input {
+  background: #444 url("assets/img/icon-search.png") 95% center no-repeat;
+  width: 25%;
+}
+
+.syntaxhighlighter {
+  padding: 10px;
+}
+
+.shadow {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .3);
+  -moz-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .3);
+  -webkit-box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .3);
+}

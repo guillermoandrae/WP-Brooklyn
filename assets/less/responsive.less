@@ -1,0 +1,56 @@
+@import "variables.less";
+@import "mixins.less";
+
+@media only screen and (max-width: 1024px) {
+
+  .nav-note {
+    display: none;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+  .container {
+    width: 568px;
+  }
+
+  article.post {
+
+
+    aside {
+      display: none;
+    }
+
+    .post-content {
+      float: none;
+      margin-left: 0;
+      width: 100%;
+    }
+
+  }
+
+}
+
+@media only screen and (max-width: 550px) {
+
+  .container {
+    width: 350px;
+  }
+
+  nav.primary-nav {
+    ul {
+      li {
+        display: block;
+        margin: 0;
+      }
+    }
+  }
+
+  article.post {
+    h1 {
+      font-size: 4em;
+    }
+  }
+
+}
