@@ -5,7 +5,7 @@
 article.post, article.page {
 
   h1 {
-    .title(6em);
+    .title(@post-title-font-size);
     .non-breaking();
     color: @muted-content-color;
     text-align: center;
@@ -15,19 +15,13 @@ article.post, article.page {
   .post-tags {
     border-top: 1px solid @divider-color;
     color: @muted-content-color;
-    font-size: .85em;
+    font-size: @post-tertiary-title-font-size;
     font-style: italic;
     font-weight: bold;
-    margin: -.5em auto 0;
-    padding: 2em 0;
+    margin: 25px auto;
+    padding: 25px 0;
     text-align: center;
     width: 100%;
-
-    a {
-      color: #aaa;
-      .text-shadow();
-    }
-
   }
 
   .post-wrapper {
@@ -68,24 +62,19 @@ article.post, article.page {
     padding: 0;
     width: 575px;
 
-    a {
-      color: #aaa;
-      .text-shadow();
-    }
-
     p {
       margin-top: 0;
     }
 
     h2 {
-      .title(3em);
+      .title(@post-secondary-title-font-size);
       font-size: 3em;
       margin: 1em 0 25px;
       text-align: left;
     }
 
     h3 {
-      font-size: 2em;
+      font-size: @post-tertiary-title-font-size;
       font-style: italic;
       font-weight: 700;
     }

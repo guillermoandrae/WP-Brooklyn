@@ -24,9 +24,6 @@
         </div>
 	</header>
     <nav class="primary-nav" role="navigation">
-        <span class="nav-close">
-            <i class="fa fa-chevron-up"></i>
-        </span>
         <ul>
             <li><a href="<?php echo home_url( '/profile'); ?>">Profile</a></li>
             <li><a href="<?php echo home_url( '/colophon'); ?>">Colophon</a></li>

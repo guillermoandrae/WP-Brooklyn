@@ -14,7 +14,7 @@ body {
   -webkit-background-size: cover;
   color: #ccc;
   font-family: @content-font-stack;
-  font-size: 1em;
+  font-size: @primary-content-font-size;
   margin: 0;
   padding: 0;
   text-align: left;
@@ -35,15 +35,11 @@ article {
 }
 
 a {
-  color: #ddd;
+  color: lighten(@brooklyn-blue, 50%);
   text-decoration: none;
   &:hover {
     border-bottom: 1px solid @brooklyn-blue;
   }
-}
-
-p a {
-  .text-shadow();
 }
 
 input, textarea, select {
@@ -104,7 +100,7 @@ footer {
   clear: both;
   color: @muted-content-color;
   float: left;
-  font-size: .75em;
+  font-size: @secondary-content-font-size;
   margin: 25px 0 0;
   padding: 25px 0;
   text-align: center;

@@ -10,14 +10,14 @@
       border: 0;
       margin: 0;
       padding: 0;
-      .title(7em);
+      .title(@hero-font-size);
     }
 
     h2 {
       letter-spacing: 3px;
       margin: .5em 0;
-      .title(1.75em);
-      line-height: 1.75em;
+      .title(@hero-subtitle-font-size);
+      line-height: 1.5em;
     }
 
   }
@@ -31,6 +31,7 @@
     }
 
     a span {
+      color: #ddd;
       float: left;
       margin: 0 25px 0 0;
       .link-box();
