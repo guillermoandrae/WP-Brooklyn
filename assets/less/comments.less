@@ -1,0 +1,62 @@
+@import "variables.less";
+@import "mixins.css";
+
+#comments {
+  border-top: 1px solid @divider-color;
+  letter-spacing: 3px;
+  padding-top: 25px;
+  text-align: center;
+  .title(2em);
+}
+
+.nocomments {
+  text-align: center;
+}
+
+.commentlist {
+
+  margin: 0;
+  padding: 0;
+
+  li.comment {
+    border: 15px solid @divider-color;
+    list-style-type: none;
+    margin: 25px 0;
+    padding: 25px;
+  }
+
+  .reply {
+    .link-box();
+    font-size: 1em;
+  }
+
+  .comment-author {
+    float: left;
+    padding: 10px;
+    .title(2em);
+
+    img {
+      float: left;
+      margin: 0 15px 0 0;
+    }
+
+    cite {
+      font-style: normal;
+    }
+
+    .says {
+      display: none;
+    }
+  }
+
+  .comment-meta {
+    border-bottom: 1px solid @divider-color;
+    clear: both;
+    font-size: .7em;
+    font-style: italic;
+    font-weight: bold;
+    padding-bottom: 15px;
+
+  }
+
+}

@@ -11,12 +11,26 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-	<header id="branding" class="navbar">
+	<header id="branding" role="banner">
 		<a href="<?php echo site_url(); ?>">
 			<h1>
-				<?php bloginfo( 'name' ); ?>
+				<i class="fa fa-home fa-lg"></i>
+                <?php bloginfo( 'name' ); ?>
 			</h1>
 		</a>
-		<p><?php _e( 'You may learn more <a href="/about">about</a> me <span class="amp">&amp;</span> this site, and you may <a href="/contact">contact</a> me; you may not bite me.' ); ?></p>
+		<div class="nav-controls">
+            <span class="nav-note"><?php _e( 'I know everything here is awesome but you may not bite me.' ); ?></span>
+            <a class="nav-toggle"><i class="fa fa-bars fa-lg"></i></a>
+        </div>
 	</header>
+    <nav class="primary-nav" role="navigation">
+        <span class="nav-close">
+            <i class="fa fa-chevron-up"></i>
+        </span>
+        <ul>
+            <li><a href="<?php echo home_url( '/profile'); ?>">Profile</a></li>
+            <li><a href="<?php echo home_url( '/colophon'); ?>">Colophon</a></li>
+            <li><a href="<?php echo home_url( '/contact'); ?>">Contact</a></li>
+        </ul>
+    </nav>
 	<div class="container" role="main">

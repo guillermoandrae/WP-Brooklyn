@@ -1,61 +1,29 @@
-<?php /* Template Name: Loop Bit of a */ ?>
-<?php if ( ! is_singular() && ! is_home() ) : ?>
-<h1 class="page-title">
-	<?php if ( is_search() ) : ?>
-	Search results for: <em><?php echo get_query_var('s'); ?></em>
-	<?php elseif ( is_category() || is_tag() ) : ?>
-	Filed in: <em><?php wp_title( '' ); ?></em>
-	<?php else : ?>
-	<?php wp_title( '' ); ?>
-	<?php endif; ?>
-</h1>
-<?php endif; ?>
-<?php if ( have_posts() ) : ?>
-<?php while ( have_posts() ) : the_post(); ?>
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <article <?php post_class(); ?>>
-	<?php if ( is_archive() || is_home() || is_search() ) : ?>
-	<a href="<?php the_permalink(); ?>">
-		<time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_time( 'm/d/Y' ); ?></time>
-		<h1>
-			<?php
-				$title = get_the_title();
-				$limit = 55;
-				if ( strlen( $title ) > $limit ) { 
-					echo substr_replace( $title, '...', $limit );
-				} else {
-					echo $title;
-				}
-			?>
-		</h1>
-	</a>
-	<?php else : ?>
-	<h1><?php the_title(); ?></h1>
-	<span role="author" class="divider">
-		<span class="line"><em>by</em></span> Guillermo A. Fisher
-	</span>
-	<?php the_content(); ?>
-	<footer>
-		<time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate>Published here on <?php the_time( 'F d, Y \a\t g:i A' ); ?>.</time>
-		<p><?php the_tags( 'Tagged as the following: ', ', ', '.' ); ?></p>
-	</footer>
-	<span role="author" class="divider">
-		<span class="line"><em>Your Feedback</em></span> Civil <span class="amp">&amp;</span> constructive, please.
-	</span>
-	<?php comments_template(); ?>
-	<?php endif; ?>
+    <h1><?php the_title(); ?></h1>
+    <div class="post-tags">
+        <?php the_tags( '<i class="fa fa-tag"></i> ', ', <i class="fa fa-tag"></i> ' ); ?>
+    </div>
+    <div class="post-wrapper">
+        <div class="post-content">
+            <?php if ( is_archive() ) : the_excerpt(); else : the_content(); endif; ?>
+        </div>
+        <aside>
+            <ul>
+                <li><a href="<?php the_permalink(); ?>"><i class="fa fa-calendar"></i> <?php the_time( 'm/j/Y' ); ?></a></li>
+                <li><a href="<?php the_permalink(); ?>"><i class="fa fa-link"></i> No. <?php the_ID(); ?></a></li>
+                <li><a href="<?php comments_link(); ?>"><i class="fa fa-comments"></i> <?php comments_number( '0 Responses', '1 Response', '% Responses' ); ?></a></li>
+            </ul>
+        </aside>
+    </div>
+    <?php if ( !is_page() && !is_archive() ) : ?>
+        <footer>
+            <span class="previous-nav"><?php next_post_link( '%link', '<i class="fa fa-chevron-circle-left fa-4x"></i>', true ); ?></span>
+            &nbsp;
+            <span class="next-nav"><?php previous_post_link( '%link', '<i class="fa fa-chevron-circle-right fa-4x"></i>', true ); ?></span>
+        </footer>
+        <?php comments_template(); ?>
+    <?php endif; ?>
 </article>
 <?php endwhile; ?>
-<div id="relative-nav">
-<?php if ( is_single() ) : ?>
-<span class="previous-nav"><?php next_post_link( '%link', '&larr;' ); ?></span>
-<span class="next-nav"><?php previous_post_link( '%link', '&rarr;' ); ?></span>
-<?php else : ?>
-<span class="previous-nav"><?php previous_posts_link( '&larr;' ); ?></span>
-<span class="next-nav"><?php next_posts_link( '&rarr;' ); ?></span>
-<?php endif; ?>
-</div>
-<?php else : ?>
-<article>
-	<p>No posts were found.</p>
-</article>
 <?php endif; ?>
