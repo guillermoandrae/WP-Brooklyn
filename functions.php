@@ -6,7 +6,7 @@ define('OOR_JS_PATH', get_stylesheet_directory_uri() . '/assets/js');
 function oor_the_title_excerpt()
 {
     $title = get_the_title();
-    $limit = 55;
+    $limit = 30;
     if ( strlen( $title ) > $limit ) {
         echo substr_replace( $title, '...', $limit );
     } else {
