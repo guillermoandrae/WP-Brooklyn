@@ -1,7 +1,7 @@
 <?php /* Template Name: Loop for a */ ?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <article <?php post_class(); ?>>
-    <h1><?php the_title(); ?></h1>
+    <a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
     <div class="post-tags">
         <?php the_tags( '<i class="fa fa-tag"></i> ', ', <i class="fa fa-tag"></i> ' ); ?>
     </div>

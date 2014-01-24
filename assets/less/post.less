@@ -4,6 +4,13 @@
 
 article.post, article.page {
 
+  a h1 {
+    color: @muted-content-color;
+    &:hover {
+      color: @brooklyn-blue;
+    }
+  }
+
   h1 {
     .title(@post-primary-title-font-size);
     .non-breaking();
