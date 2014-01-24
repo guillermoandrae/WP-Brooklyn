@@ -26,9 +26,9 @@
 	</header>
     <nav class="primary-nav" role="navigation">
         <ul>
-            <li><a href="<?php echo home_url( '/profile'); ?>">Profile</a></li>
-            <li><a href="<?php echo home_url( '/colophon'); ?>">Colophon</a></li>
-            <li><a href="<?php echo home_url( '/contact'); ?>">Contact</a></li>
+            <li><a href="<?php echo home_url( '/profile' ); ?>">Profile</a></li>
+            <li><a href="<?php echo home_url( '/colophon' ); ?>">Colophon</a></li>
+            <li><a href="<?php echo home_url( '/contact' ); ?>">Contact</a></li>
         </ul>
     </nav>
 	<div class="container" role="main">
