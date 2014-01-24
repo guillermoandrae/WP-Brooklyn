@@ -84,16 +84,6 @@ article.post, article.page {
     }
   }
 
-  footer {
-    padding: 5em 0 2em;
-    text-align: center;
-
-    a:hover {
-      border: 0;
-      color: @brooklyn-blue;
-    }
-  }
-
 }
 
 
@@ -109,4 +99,13 @@ article.post, article.page {
     padding-bottom: 2em;
   }
 
+}
+
+footer.relative-nav {
+  padding: 5em 0 2em;
+  text-align: center;
+
+  a {
+    .nav-icon();
+  }
 }
