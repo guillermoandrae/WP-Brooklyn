@@ -31,7 +31,7 @@ function oor_enqueue_scripts()
 {
     // queue up styles
     wp_enqueue_style( 'default', get_stylesheet_uri() );
-    wp_enqueue_style( 'default', OOR_VENDOR_PATH . '/font-awesome/css/font-awesome.min.css' );
+    wp_enqueue_style( 'font-awesome', OOR_VENDOR_PATH . '/font-awesome/css/font-awesome.min.css' );
 
     // queue up CDN scripts
     wp_enqueue_script( 'oor-modernizr', '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js' );
