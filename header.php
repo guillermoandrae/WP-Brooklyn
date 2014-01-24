@@ -16,7 +16,7 @@
 		<a href="<?php echo site_url(); ?>">
 			<h1>
 				<i class="fa fa-home fa-lg"></i>
-                <?php bloginfo( 'name' ); ?>
+                <span class="site-title"><?php bloginfo( 'name' ); ?></span>
 			</h1>
 		</a>
 		<div class="nav-controls">
