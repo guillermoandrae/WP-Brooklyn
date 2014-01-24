@@ -12,7 +12,7 @@
         <aside>
             <ul>
                 <li><a href="<?php the_permalink(); ?>"><i class="fa fa-calendar"></i> <time datetime="<?php the_time( 'Y-m-d' ); ?>"><?php the_time( 'm/j/Y' ); ?></time></a></li>
-                <li><a href="<?php the_permalink(); ?>"><i class="fa fa-link"></i> No. <?php the_ID(); ?></a></li>
+                <li><a href="<?php the_permalink(); ?>"><i class="fa fa-link"></i> &#8470; <?php the_ID(); ?></a></li>
                 <?php if ( !is_page() ) : ?>
                 <li><a href="<?php comments_link(); ?>"><i class="fa fa-comments"></i> <?php comments_number( '0 Responses', '1 Response', '% Responses' ); ?></a></li>
                 <?php endif; ?>
