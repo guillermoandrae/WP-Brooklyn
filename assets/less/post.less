@@ -4,8 +4,15 @@
 
 article.post, article.page {
 
+  a h1 {
+    color: @muted-content-color;
+    &:hover {
+      color: @brooklyn-blue;
+    }
+  }
+
   h1 {
-    .title(@post-title-font-size);
+    .title(@post-primary-title-font-size);
     .non-breaking();
     color: @muted-content-color;
     text-align: center;

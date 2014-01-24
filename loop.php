@@ -1,7 +1,7 @@
 <?php /* Template Name: Loop for a */ ?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <article <?php post_class(); ?>>
-    <h1><?php the_title(); ?></h1>
+    <a href="<?php the_permalink(); ?>"><h1><?php the_title(); ?></h1></a>
     <div class="post-tags">
         <?php the_tags( '<i class="fa fa-tag"></i> ', ', <i class="fa fa-tag"></i> ' ); ?>
     </div>
@@ -19,7 +19,7 @@
             </ul>
         </aside>
     </div>
-    <?php if ( !is_page() && !is_archive() ) : ?>
+    <?php if ( !is_page() && !is_archive() && !is_search() ) : ?>
         <footer class="relative-nav">
             <span class="previous-nav"><?php next_post_link( '%link', '<i class="fa fa-chevron-circle-left fa-4x"></i>', true ); ?></span>
             &nbsp;
