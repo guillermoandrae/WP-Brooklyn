@@ -1,3 +1,4 @@
+<?php /* Template Name: Loop for a */ ?>
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 <article <?php post_class(); ?>>
     <h1><?php the_title(); ?></h1>
@@ -19,7 +20,7 @@
         </aside>
     </div>
     <?php if ( !is_page() && !is_archive() ) : ?>
-        <footer>
+        <footer class="relative-nav">
             <span class="previous-nav"><?php next_post_link( '%link', '<i class="fa fa-chevron-circle-left fa-4x"></i>', true ); ?></span>
             &nbsp;
             <span class="next-nav"><?php previous_post_link( '%link', '<i class="fa fa-chevron-circle-right fa-4x"></i>', true ); ?></span>
