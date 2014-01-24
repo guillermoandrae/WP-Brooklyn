@@ -1,10 +1,8 @@
 <?php /* Template Name: Home */ ?>
 <?php get_header(); ?>
     <header>
-        <hgroup>
-            <h1><?php bloginfo( 'name' ); ?></h1>
-            <h2><?php bloginfo( 'description' ); ?></h2>
-        </hgroup>
+        <h1><?php bloginfo( 'name' ); ?></h1>
+        <h2><?php bloginfo( 'description' ); ?></h2>
     </header>
 <?php if ( have_posts() ) : the_post(); ?>
     <article <?php post_class(); ?>>
