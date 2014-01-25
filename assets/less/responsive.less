@@ -1,7 +1,7 @@
 @import "variables.less";
 @import "mixins.less";
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 850px) {
 
   .nav-note {
     display: none;
@@ -12,24 +12,62 @@
 @media only screen and (max-width: 768px) {
 
   .container {
-    width: 568px;
+    margin-top: 90px;
+    width: 100%;
   }
 
-  .site-title {
-    font-size: .4em;
+  .home .container {
+
+    header {
+
+      h1 {
+        font-size: 5.25em;
+      }
+
+      h2 {
+        font-size: 1.75em;
+      }
+    }
+
+    article a {
+      display: block;
+      float: none;
+      text-align: center;
+      margin: 0 auto;
+      padding: 0 25px;
+
+      span {
+        display: block;
+        float: none;
+        margin: 0;
+      }
+    }
+
+    .post-excerpt {
+      display: none;
+    }
   }
 
   article.post {
+    width: 100%;
 
+    h1 {
+      font-size: 5em;
+    }
 
     aside {
       display: none;
     }
 
+    .post-tags {
+      padding-bottom: 0px;
+    }
+
     .post-content {
       float: none;
       margin-left: 0;
-      width: 100%;
+      padding: 0 25px;
+      width: auto;
     }
 
   }
@@ -38,11 +76,23 @@
 
 @media only screen and (max-width: 550px) {
 
-  .container {
-    width: 350px;
+  #branding {
+
+    h1 {
+      padding-left: 25px;
+    }
+
+    .nav-controls {
+      padding-left: 0px;
+    }
+  }
+
+  .site-title {
+    font-size: .7em;
   }
 
   nav.primary-nav {
+    display: none;
     float: left;
     ul {
       li {
@@ -56,12 +106,22 @@
         border: 0;
       }
     }
+
   }
 
-  article.post {
-    h1 {
-      font-size: 4em;
+  .home .container {
+
+    header {
+
+      h1 {
+        font-size: 4em;
+      }
+
+      h2 {
+        font-size: 1.5em;
+      }
     }
+
   }
 
   .social-icons {

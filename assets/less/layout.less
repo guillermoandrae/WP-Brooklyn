@@ -1,10 +1,6 @@
 @import "variables.less";
 @import "mixins.less";
 
-article, time, header, footer, nav, article, aside {
-  display: block;
-}
-
 body {
   background: #323232 url("assets/img/bg.jpg");
   background-attachment: fixed;
@@ -12,18 +8,16 @@ body {
   background-size: cover;
   -moz-background-size: cover;
   -webkit-background-size: cover;
-  color: #ccc;
+  color: @content-color;
   font-family: @content-font-stack;
   font-size: @primary-content-font-size;
-  margin: 0;
-  padding: 0;
-  text-align: left;
+  text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
-  margin: 0;
+.container {
+  margin: 100px auto 0;
   padding: 0;
+  width: 800px;
 }
 
 article {
@@ -80,16 +74,6 @@ pre {
   padding: 20px;
 }
 
-.container {
-  margin: 0 auto;
-  width: 800px;
-}
-
-div[role="main"] {
-  margin: 100px auto 0;
-  padding: 0 15px;
-}
-
 footer {
   clear: both;
   font-family: @content-font-stack;
@@ -102,7 +86,7 @@ footer {
   float: left;
   font-size: @secondary-content-font-size;
   margin: 25px 0 0;
-  padding: 25px 0;
+  padding: 25px 0 0;
   text-align: center;
   width: 100%;
 

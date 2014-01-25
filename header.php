@@ -3,9 +3,9 @@
 <head>
 <title><?php bloginfo( 'name' ); ?><?php wp_title( ' | ' ); ?></title>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="robots" content="index, follow">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="<?php bloginfo( 'description' ); ?>">
-<meta name="viewport" content="width=device-width">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <link rel="shortcut icon" href="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/img/favicon.ico">
 <link rel="apple-touch-icon" href="<?php bloginfo( 'stylesheet_directory' ); ?>/assets/img/apple-touch-icon.png">

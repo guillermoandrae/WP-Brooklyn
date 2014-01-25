@@ -3,9 +3,10 @@
 
 
 article.post, article.page {
+  text-align: left;
 
   a h1 {
-    color: @muted-content-color;
+    color: lighten(@muted-content-color, 10%);
     &:hover {
       color: @brooklyn-blue;
     }
@@ -53,7 +54,7 @@ article.post, article.page {
       padding: 0;
 
       a {
-        font-size: .7em;
+        font-size: .8em;
         width: 100%;
         .link-box();
       }
@@ -94,7 +95,7 @@ article.post, article.page {
 }
 
 
-.archive article.post {
+.archive article.post, .search article.post {
 
   h1 {
     font-size: 5em;
