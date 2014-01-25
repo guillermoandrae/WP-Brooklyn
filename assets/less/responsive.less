@@ -48,7 +48,7 @@
     }
   }
 
-  article.post {
+  article.post, article.page {
     width: 100%;
 
     h1 {
@@ -72,15 +72,19 @@
 
   }
 
+  .commentlist {
+    padding: 25px;
+  }
+
+  #respond {
+    padding: 0 25px;
+  }
+
 }
 
 @media only screen and (max-width: 550px) {
 
   #branding {
-
-    h1 {
-      padding-left: 25px;
-    }
 
     .nav-controls {
       padding-left: 0px;
@@ -126,6 +130,12 @@
 
   .social-icons {
     width: 80%;
+  }
+
+  article.post, article.page {
+    h1 {
+      font-size: 3em;
+    }
   }
 
 }
