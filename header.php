@@ -24,11 +24,5 @@
             <a class="nav-toggle"><i class="fa fa-bars fa-lg"></i></a>
         </div>
 	</header>
-    <nav class="primary-nav" role="navigation">
-        <ul>
-            <li><a href="<?php echo home_url( '/profile' ); ?>">Profile</a></li>
-            <li><a href="<?php echo home_url( '/colophon' ); ?>">Colophon</a></li>
-            <li><a href="<?php echo home_url( '/contact' ); ?>">Contact</a></li>
-        </ul>
-    </nav>
+    <?php wp_nav_menu(array('menu' => 'primary', 'container' => 'nav', 'container_class' => 'primary-nav')); ?>
 	<div class="container" role="main">
