@@ -1,4 +1,4 @@
-WP-Write
+WP Brooklyn
 ========
 
-WordPress theme for my blog, http://guillermoandraefisher.com.
+WordPress theme inspired by Brooklyn, NY. See it live at http://guillermoandraefisher.com.
