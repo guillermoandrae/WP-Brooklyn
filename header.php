@@ -20,7 +20,7 @@
 			</h1>
 		</a>
 		<div class="nav-controls">
-            <span class="nav-note"><?php _e( 'I know everything here is awesome but you may not bite me.' ); ?></span>
+		    <span class="nav-note"><?php echo oor_get_nav_note(); ?></span>
             <a class="nav-toggle"><i class="fa fa-bars fa-lg"></i></a>
         </div>
 	</header>

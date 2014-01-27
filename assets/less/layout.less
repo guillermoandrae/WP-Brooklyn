@@ -2,7 +2,9 @@
 @import "mixins.less";
 
 body {
-  background: #323232 url("assets/img/bg.jpg");
+  background-color: #323232;
+  background-image: url("assets/img/bg.jpg");
+  //background-image: url("assets/img/bg-2-train.jpg");
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -86,7 +88,7 @@ footer {
   float: left;
   font-size: @secondary-content-font-size;
   margin: 25px 0 0;
-  padding: 25px 0 0;
+  padding: 15px 0 0;
   text-align: center;
   width: 100%;
 
@@ -115,11 +117,12 @@ footer {
 
 #searchform {
   margin: 0 0 10px;
+  padding: 0;
 }
 
 #searchform input {
-  background: #444 url("assets/img/icon-search.png") 95% center no-repeat;
-  width: 50%;
+  background: #444 url("assets/img/icon-search.png") 98% center no-repeat;
+  width: 40%;
 }
 
 .syntaxhighlighter {

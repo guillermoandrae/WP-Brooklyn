@@ -14,13 +14,18 @@ function oor_the_title_excerpt()
     }
 }
 
-register_sidebar(array(
-    'name' => __( 'Right Hand Sidebar' ),
-    'id' => 'right-sidebar',
-    'description' => __( 'Widgets in this area will be shown on the right-hand side.' ),
-    'before_title' => '<h1>',
-    'after_title' => '</h1>'
-));
+
+function oor_get_nav_note()
+{
+    $notes = array(
+        '<q>To people from \'Brooklyn-Brooklyn\' North Brooklyn is really just South Queens.</q> - <cite><a href="http://chickenonthehudson.com/">Cat Agonis</a></cite>',
+        '<q>It\'s ironic that no matter where I go, I meet people from Brooklyn. I\'m proud of that heritage. It\'s where I\'m from, who I am.</q> - <cite><a href="http://en.wikipedia.org/wiki/Howard_Schultz">Howard Schultz</a></cite>',
+        '<q>Brooklyn is not the easiest place to grow up in, although I wouldn\'t change that experience for anything.</q> - <cite><a href="http://www.neildiamond.com">Neil Diamond</a></cite>',
+        '<q>I didn\'t appreciate Brooklyn until I left it.</q> - <cite><a href="http://en.wikipedia.org/wiki/Rosie_Perez">Rosie Perez</a></cite>',
+    );
+    $note = __( $notes[array_rand($notes)] );
+    return $note;
+}
 
 function oor_enqueue_scripts()
 {
