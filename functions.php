@@ -14,11 +14,6 @@ function oor_the_title_excerpt()
     }
 }
 
-function oor_excerpt_length( $length ) {
-    return 15;
-}
-add_filter( 'excerpt_length', 'oor_excerpt_length', 999 );
-
 register_sidebar(array(
     'name' => __( 'Right Hand Sidebar' ),
     'id' => 'right-sidebar',
