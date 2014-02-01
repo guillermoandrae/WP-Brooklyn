@@ -1,3 +1,5 @@
+"use strict";
+
 $.fn.shadowify = function(){
     var $obj = $(this);
     $(window).scroll(function(event){

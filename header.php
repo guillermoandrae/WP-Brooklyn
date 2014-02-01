@@ -13,8 +13,8 @@
 <body <?php body_class(); ?>>
 	<header id="branding" role="banner">
 		<a href="<?php echo site_url(); ?>">
+            <span class="nav-home"><i class="fa fa-home fa-lg"></i></span>
 			<h1>
-				<i class="fa fa-home fa-lg"></i>
                 <span class="site-title"><?php bloginfo( 'name' ); ?></span>
 			</h1>
 		</a>
@@ -23,5 +23,6 @@
             <a class="nav-toggle"><i class="fa fa-bars fa-lg"></i></a>
         </div>
 	</header>
+	<div id="overlay"></div>
     <?php wp_nav_menu(array('menu' => 'primary', 'container' => 'nav', 'container_class' => 'primary-nav')); ?>
-	<div class="container" role="main">
+	<div id="container" role="main">
