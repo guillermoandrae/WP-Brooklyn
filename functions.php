@@ -34,7 +34,7 @@ function oor_enqueue_scripts()
     wp_enqueue_style( 'font-awesome', OOR_VENDOR_PATH . '/font-awesome/css/font-awesome.min.css' );
 
     // queue up jQuery
-    wp_enqueue_script( 'oor-jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js', null, null, true );
+    wp_enqueue_script( 'oor-jquery', OOR_VENDOR_PATH . '/jquery/dist/jquery.min.js', null, null, true );
 
     // queue up Modernizr
     wp_enqueue_script( 'oor-modernizr', OOR_VENDOR_PATH . '/modernizr/modernizr.js' );
