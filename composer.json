@@ -1,0 +1,16 @@
+{
+    "name": "guillermoandrae/WP-Brooklyn",
+    "description": "A responsive WordPress theme inspired by Brooklyn, NY.",
+    "homepage": "http://github.com/guillermoandrae/WP-Brooklyn",
+    "authors": [
+        {
+            "name": "Guillermo A. Fisher",
+            "email": "guillermoandraefisher@gmail.com",
+            "homepage": "http://github.com/guillermoandrae",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0"
+    }
+}
