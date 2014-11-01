@@ -13,6 +13,7 @@ env:
 before_install:
   - openssl aes-256-cbc -K $encrypted_1891cd6c5b1c_key -iv $encrypted_1891cd6c5b1c_iv
     -in falcor.enc -out falcor -d
+
 before_script:
   - composer self-update && composer --version
   - composer install --prefer-source --no-interaction
@@ -24,8 +25,8 @@ script:
   - find -L . -name '*.php' -depth 1 -print0 | xargs -0 -n 1 -P 4 php -l
 
 after_success:
-  - chmod 600 $falcor
-  - ssh-add $falcor
+  - chmod 600 falcor
+  - ssh-add falcor
   - git remote add deploy $DEPLOY_URL
   - git add --all && git commit -m "Deployment triggered by commit ${TRAVIS_COMMIT}"
   - git config push.default simple
