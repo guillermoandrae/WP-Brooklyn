@@ -7,7 +7,7 @@ php:
 
 before_script:
   - composer self-update && composer --version
-  - composer install --prefer-source --no-interaction --dev
+  - composer install --prefer-source --no-interaction
   - npm install -g bower
   - bower install
 
@@ -19,6 +19,3 @@ env:
   - secure: e9CXC2eFqtqxTDfuL7hN2thQO89i72NIIJ/J1q7dKWoUQdxRNt3wo2lmuiHDlAiFE9TLcHatrx7DVTqRQveyKHZcKCNfQcZUElT+Jo97bkW056MoaD7wKM/T6geKQ2ftqfhzHQHcgf8IF4GAFMuPG1zc0f/MFtHK5+d491cyj0Q=
   - secure: Fw5vkfplxUO5cY9zPt2be9I0xmz7G3peruLWVus5JpB5CL+N72yGzb8d+515hK77yqVJpELQfQorpxHvVVJtYLWXvCCynqv8SV2f9GW56MLX0io7XqbrNhytpTUH/bXXQnTuhxnx/RIZ5dRG7NHUXHAlI8xfLMlMo/+TKMWVjkU=
   - secure: hkX5ITaN1gptibJ3aJF+LmyryjDDuvaecq3wb3nQ/4yxv9QMwcnSyYC/TStTlaUbwViaHtUgazmJugnj2ODljVN+hlJJyBJJFpyqpzd1xQX+nPUKEefoyO7UB6MC7T+vSM7utqe18GcvMsvIw1tdwhk84PYr+qm9XhddkUsnmCc=
-
-deploy:
-  - rsync -aruvz --delete --exclude="*.md" --exclude=".git*" --exclude="phpunit.xml*" --exclude="composer.*" --exclude="tests" --exclude="reports" ./* $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
