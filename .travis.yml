@@ -7,8 +7,8 @@ php:
 
 env:
   global:
-  - secure: JGlE+/rooAZ11StpoyzP0kbNyOck08REekCAFp29rltTBi+ZJvzLWFfiJlgkcZ/aq/Ughmj169SeR1bgKpeuuYblIHadIHF2ferV9DdptvB8eqqNOPEmxSM+4sDqmrjHyw2rcnSaNVLuaMAnU5G9O1eazwO0EZC7Um3CZJ+7qLI=
-  - secure: XHiOoIDdKWodLzN4vA4VDdYLTwGNie1hOuZCJ1JF6hITlzjPrP5CFktvbz/IXMQLTa/ZpZKdjFlSLp9Vj8BDcDGyHXb2iadjnsGJ38c86SKxuiN3p9PfoZXPpcc3fRiQVIbyfh6IVGLPm+/L9wzcq0aa9PGwlljallmZmhzSmAk=
+    - secure: JGlE+/rooAZ11StpoyzP0kbNyOck08REekCAFp29rltTBi+ZJvzLWFfiJlgkcZ/aq/Ughmj169SeR1bgKpeuuYblIHadIHF2ferV9DdptvB8eqqNOPEmxSM+4sDqmrjHyw2rcnSaNVLuaMAnU5G9O1eazwO0EZC7Um3CZJ+7qLI=
+    - secure: FpamtV/eWAmgfU3jnYytHnN/me0RivR4rDGVOIjkD/xhifidthg3w27PE+a6Jg3xi5SaIxGo7I79lehNpnOZ614fqhHLDYnVFaKlz7vG68XRTr7MRJ0x63XT3nHVxNmy0su+ocBL7D/Iwn/DNI8MpOed5fmpxBqPYA4nJ49itH0=
 
 before_script:
   - composer self-update && composer --version
@@ -18,11 +18,12 @@ before_script:
   - echo -e "Host ${DEPLOY_HOST}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 
 script:
-  - find -Lx . -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
+  - find -L -x . -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
 
 after_success:
   - chmod 600 .travis/deploy_key.pem
   - ssh-add .travis/deploy_key.pem
   - git remote add deploy $DEPLOY_URL
   - git add --all && git commit -m "Deployment triggered by commit ${TRAVIS_COMMIT}"
-  - git push deploy
+  - git config push.default simple
+  - git push deploy master
