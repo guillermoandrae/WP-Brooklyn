@@ -25,13 +25,12 @@ script:
   - find -L . -depth 1 -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
 
 after_success:
-  - cat $encrypted_1891cd6c5b1c_key > .travis/deploy_key.pem
-  - chmod 600 .travis/deploy_key.pem
-  - ssh-add .travis/deploy_key.pem
+  - eval "$(ssh-agent)"
+  - chmod 600 falcor
+  - ssh-add falcor
   - git config user.email travis@localhost.localdomain
   - git config user.name "Travis CI"
   - git remote add deploy $DEPLOY_URL
   - git add --all && git commit -m "Deployment triggered by commit ${TRAVIS_COMMIT}"
   - git config push.default simple
   - git push deploy master
-
