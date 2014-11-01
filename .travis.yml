@@ -19,18 +19,19 @@ before_script:
   - composer install --prefer-source --no-interaction
   - npm install -g bower
   - bower install
-  - echo -e "Host ${DEPLOY_HOST}\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
+  - echo -e "Host ${DEPLOY_HOST}\n\tStrictHostKeyChecking no\n\tLogLevel ERROR\n" >> ~/.ssh/config
 
 script:
-  - find -L . -name '*.php' -depth 1 -print0 | xargs -0 -n 1 -P 4 php -l
+  - find -L . -depth 1 -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
 
 after_success:
-  - chmod 600 falcor
-  - ssh-add falcor
+  - cat $encrypted_1891cd6c5b1c_key > .travis/deploy_key.pem
+  - chmod 600 .travis/deploy_key.pem
+  - ssh-add .travis/deploy_key.pem
+  - git config user.email travis@localhost.localdomain
+  - git config user.name "Travis CI"
   - git remote add deploy $DEPLOY_URL
   - git add --all && git commit -m "Deployment triggered by commit ${TRAVIS_COMMIT}"
   - git config push.default simple
-  - git config user.email travis@localhost.localdomain
-  - git config user.name "Travis CI"
-  - git push deploy master > /dev/null
+  - git push deploy master
 
