@@ -1,5 +1,5 @@
 <pre>
-    tweaking... come back later
+    tweaking. come back later.
 
     in the meantime, check out:
     <a href="https://github.com/guillermoandrae">https://github.com/guillermoandrae</a>
