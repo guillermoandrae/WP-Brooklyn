@@ -7,8 +7,10 @@ php:
 
 env:
   global:
-    - secure: JGlE+/rooAZ11StpoyzP0kbNyOck08REekCAFp29rltTBi+ZJvzLWFfiJlgkcZ/aq/Ughmj169SeR1bgKpeuuYblIHadIHF2ferV9DdptvB8eqqNOPEmxSM+4sDqmrjHyw2rcnSaNVLuaMAnU5G9O1eazwO0EZC7Um3CZJ+7qLI=
-    - secure: FpamtV/eWAmgfU3jnYytHnN/me0RivR4rDGVOIjkD/xhifidthg3w27PE+a6Jg3xi5SaIxGo7I79lehNpnOZ614fqhHLDYnVFaKlz7vG68XRTr7MRJ0x63XT3nHVxNmy0su+ocBL7D/Iwn/DNI8MpOed5fmpxBqPYA4nJ49itH0=
+  - secure: JGlE+/rooAZ11StpoyzP0kbNyOck08REekCAFp29rltTBi+ZJvzLWFfiJlgkcZ/aq/Ughmj169SeR1bgKpeuuYblIHadIHF2ferV9DdptvB8eqqNOPEmxSM+4sDqmrjHyw2rcnSaNVLuaMAnU5G9O1eazwO0EZC7Um3CZJ+7qLI=
+  - secure: FpamtV/eWAmgfU3jnYytHnN/me0RivR4rDGVOIjkD/xhifidthg3w27PE+a6Jg3xi5SaIxGo7I79lehNpnOZ614fqhHLDYnVFaKlz7vG68XRTr7MRJ0x63XT3nHVxNmy0su+ocBL7D/Iwn/DNI8MpOed5fmpxBqPYA4nJ49itH0=
+  - secure: dfUzgDGgSW+NqhN58BponPPtBSxeMDq1io8n2I5BdoH1l8KuzqFQMytBdQTsIdj1BSU5KyY6AIdKF8D/+Tr0Sb/OjBCGdHjUj88+D5dzYb5iwIMn0QnNNzzvawytxZRxsChr2A/lLZoZo5xlfmKXbd9XRlM/s9jURG0IMD0sQjQ=
+  - secure: Kv7QjyKCQD5CMTaLJQxt7hDXRO8/JY9ZenSi8C1iLPReWqoloEu+tOqZRwmTEY9swVUwXDbP357H+Hf3YgILp/VVIqy//3eGf9qOLdQ4EoenkxaE9rrOG3oeBDBMgskUR0KcETqXGyQFt784UCqxjpQPMuZmQftaFQSbec5ylB4=
 
 before_install:
   - openssl aes-256-cbc -K $encrypted_1891cd6c5b1c_key -iv $encrypted_1891cd6c5b1c_iv
@@ -28,8 +30,4 @@ after_success:
   - eval "$(ssh-agent)"
   - chmod 600 falcor
   - ssh-add falcor
-  - git config user.email travis@localhost.localdomain
-  - git config user.name "Travis CI"
-  - git remote add deploy $DEPLOY_URL
-  - git config push.default simple
-  - git push deploy
+  - rsync -aruvz --delete --exclude="falcor" --exclude="*.md" --exclude="composer*" --exclude="*.yml" ./* ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}
