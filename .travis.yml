@@ -21,4 +21,4 @@ env:
   - secure: hkX5ITaN1gptibJ3aJF+LmyryjDDuvaecq3wb3nQ/4yxv9QMwcnSyYC/TStTlaUbwViaHtUgazmJugnj2ODljVN+hlJJyBJJFpyqpzd1xQX+nPUKEefoyO7UB6MC7T+vSM7utqe18GcvMsvIw1tdwhk84PYr+qm9XhddkUsnmCc=
 
 deploy:
-  - "rsync -aruvz --delete --exclude="*.md" --exclude=".git*" --exclude="phpunit.xml*" --exclude="composer.*" --exclude="tests" --exclude="reports" ./* $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH"k
+  - rsync -aruvz --delete --exclude="*.md" --exclude=".git*" --exclude="phpunit.xml*" --exclude="composer.*" --exclude="tests" --exclude="reports" ./* $DEPLOY_USER@$DEPLOY_HOST:$DEPLOY_PATH
