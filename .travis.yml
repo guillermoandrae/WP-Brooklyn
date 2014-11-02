@@ -27,4 +27,4 @@ script:
 
 after_success:
   - if [[ ${TRAVIS_BRANCH} == "master" ]] && [[ ${TRAVIS_PULL_REQUEST} == "false" ]]; then eval "$(ssh-agent)"; chmod 600 falcor; ssh-add falcor; fi
-  - if [[ ${TRAVIS_BRANCH} == "master" ]] && [[ ${TRAVIS_PULL_REQUEST} == "false" ]]; then rsync -aruvz --delete --exclude="falcor" --exclude="*.md" --exclude="composer*" --exclude="*.yml" ./* ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}; fi
+  - if [[ ${TRAVIS_BRANCH} == "master" ]] && [[ ${TRAVIS_PULL_REQUEST} == "false" ]]; then rsync -aruvz --delete --exclude="falcor*" --exclude="*.md" --exclude="composer*" --exclude="*.yml" --exclude="bower.json" --exclude=".bowerrc" --exclude="phpunit.xml" --exclude="tests" ./* ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}; fi
