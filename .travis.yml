@@ -26,5 +26,5 @@ script:
   - find . -maxdepth 1 -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l
 
 after_success:
-  - if [[ ${TRAVIS_BRANCH} = "master" ]] && [[ ! ${TRAVIS_PULL_REQUEST} ]]; then eval "$(ssh-agent)"; chmod 600 falcor; ssh-add falcor; fi
-  - if [[ ${TRAVIS_BRANCH} = "master" ]] && [[ ! ${TRAVIS_PULL_REQUEST} ]]; then rsync -aruvz --delete --exclude="falcor" --exclude="*.md" --exclude="composer*" --exclude="*.yml" ./* ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}; fi
+  - if [[ ${TRAVIS_BRANCH} == "master" ]] && [[ ${TRAVIS_PULL_REQUEST} == "false" ]]; then eval "$(ssh-agent)"; chmod 600 falcor; ssh-add falcor; fi
+  - if [[ ${TRAVIS_BRANCH} == "master" ]] && [[ ${TRAVIS_PULL_REQUEST} == "false" ]]; then rsync -aruvz --delete --exclude="falcor" --exclude="*.md" --exclude="composer*" --exclude="*.yml" ./* ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}; fi
