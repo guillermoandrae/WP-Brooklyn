@@ -29,8 +29,12 @@ function oor_get_nav_note()
 
 function oor_enqueue_scripts()
 {
+    // get theme version
+    $theme = wp_get_theme();
+    $version = $theme->version;
+
     // queue up styles
-    wp_enqueue_style( 'default', get_stylesheet_uri() );
+    wp_enqueue_style( 'default', get_stylesheet_uri(), [], $version );
     wp_enqueue_style( 'font-awesome', OOR_VENDOR_PATH . '/font-awesome/css/font-awesome.min.css' );
 
     // queue up jQuery
