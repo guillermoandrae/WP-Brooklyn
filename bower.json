@@ -1,31 +1,31 @@
 {
-  "name": "WP-Brooklyn",
-  "version": "0.3.0",
-  "homepage": "https://github.com/guillermoandrae/WP-Brooklyn",
-  "authors": [
-    "Guillermo A. Fisher <guillermoandraefisher@gmail.com>"
-  ],
-  "description": "A responsive WordPress theme inspired by Brooklyn, NY.",
-  "main": "index.php",
-  "moduleType": [
-    "node"
-  ],
-  "keywords": [
-    "wordpress"
-  ],
-  "license": "MIT",
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "vendor",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "font-awesome": "~4.2.0",
-    "jquery": "~2.1.1",
-    "modernizr": "~2.8.3"
-  }
+    "name": "WP-Brooklyn",
+    "version": "0.3.0",
+    "homepage": "https://github.com/guillermoandrae/WP-Brooklyn",
+    "authors": [
+        "Guillermo A. Fisher <guillermoandraefisher@gmail.com>"
+    ],
+    "description": "A responsive WordPress theme inspired by Brooklyn, NY.",
+    "main": "index.php",
+    "moduleType": [
+        "node"
+    ],
+    "keywords": [
+        "wordpress"
+    ],
+    "license": "MIT",
+    "private": true,
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "vendor",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "font-awesome": "~4.2.0",
+        "jquery": "~2.1.1",
+        "modernizr": "~2.8.3"
+    }
 }
