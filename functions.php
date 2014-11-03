@@ -21,15 +21,15 @@ function wpbk_the_title_excerpt()
  *
  * @return array The quote/note to show.
  */
-				function wpbk_get_nav_note()
-				{
+function wpbk_get_nav_note()
+{
 				$notes = array(
 								'<q>To people from \'Brooklyn-Brooklyn\' North Brooklyn is really just South Queens.</q> - <cite><a href="http://chickenonthehudson.com/">Cat Agonis</a></cite>',
 								'<q>It\'s ironic that no matter where I go, I meet people from Brooklyn. I\'m proud of that heritage. It\'s where I\'m from, who I am.</q> - <cite><a href="http://en.wikipedia.org/wiki/Howard_Schultz">Howard Schultz</a></cite>',
 								'<q>Brooklyn is not the easiest place to grow up in, although I wouldn\'t change that experience for anything.</q> - <cite><a href="http://www.neildiamond.com">Neil Diamond</a></cite>',
 								'<q>I didn\'t appreciate Brooklyn until I left it.</q> - <cite><a href="http://en.wikipedia.org/wiki/Rosie_Perez">Rosie Perez</a></cite>',
 				);
-					$note = __( $notes[ array_rand( $notes ) ] );
+					$note = __( esc_attr( $notes[ array_rand( $notes ) ] ) );
 					return $note;
 }
 
@@ -59,7 +59,7 @@ function wpbk_enqueue_scripts()
 					}
 }
 
-if ( !is_admin() ) {
+if ( ! is_admin() ) {
 				add_action( 'init', 'oor_enqueue_scripts' );
 }
 
