@@ -9,6 +9,7 @@ define( 'OOR_JS_PATH', get_stylesheet_directory_uri() . '/assets/js' );
 function wpbk_the_title_excerpt()
 {
 				$limit = 30;
+				$title = get_the_title();
 				if ( strlen( $title ) > $limit ) {
 								_e( esc_html( substr_replace( $title, '...', $limit ) ) );
 				} else {
@@ -30,7 +31,7 @@ function wpbk_get_nav_note()
 								'<q>I didn\'t appreciate Brooklyn until I left it.</q> - <cite><a href="http://en.wikipedia.org/wiki/Rosie_Perez">Rosie Perez</a></cite>',
 				);
 				$note = __( esc_attr( $notes[ array_rand( $notes ) ] ) );
-				return $note;
+				return html_entity_decode( $note );
 }
 
 /**
