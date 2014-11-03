@@ -53,7 +53,7 @@ function wpbk_enqueue_scripts()
 }
 
 if ( ! is_admin() ) {
-				add_action( 'init', 'oor_enqueue_scripts' );
+				add_action( 'init', 'wpbk_enqueue_scripts' );
 }
 
 remove_action( 'wp_head', 'wp_generator' );
