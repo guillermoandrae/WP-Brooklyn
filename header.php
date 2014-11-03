@@ -21,7 +21,7 @@
 	</a>
 
 	<div class="nav-controls">
-		<span class="nav-note"><?php echo oor_get_nav_note(); ?></span>
+		<span class="nav-note"><?php echo wpbk_get_nav_note(); ?></span>
 		<a class="nav-toggle"><i class="fa fa-bars fa-lg"></i></a>
 	</div>
 </header>
