@@ -7,8 +7,8 @@ function oor_the_title_excerpt()
 {
 	$title = get_the_title();
 	$limit = 30;
-	if (strlen($title) > $limit) {
-		echo substr_replace($title, '...', $limit);
+	if ( strlen( $title ) > $limit ) {
+		echo substr_replace( $title, '...', $limit );
 	} else {
 		echo $title;
 	}
@@ -23,7 +23,7 @@ function oor_get_nav_note()
 		'<q>Brooklyn is not the easiest place to grow up in, although I wouldn\'t change that experience for anything.</q> - <cite><a href="http://www.neildiamond.com">Neil Diamond</a></cite>',
 		'<q>I didn\'t appreciate Brooklyn until I left it.</q> - <cite><a href="http://en.wikipedia.org/wiki/Rosie_Perez">Rosie Perez</a></cite>',
 	);
-	$note = __($notes[array_rand($notes)]);
+	$note = __( $notes[ array_rand( $notes ) ] );
 	return $note;
 }
 
@@ -34,24 +34,24 @@ function oor_enqueue_scripts()
 	$version = $theme->version;
 
 	// queue up styles
-	wp_enqueue_style('default', get_stylesheet_uri(), [], $version);
-	wp_enqueue_style('font-awesome', OOR_VENDOR_PATH . '/font-awesome/css/font-awesome.min.css');
+	wp_enqueue_style( 'default', get_stylesheet_uri(), [], $version );
+	wp_enqueue_style( 'font-awesome', OOR_VENDOR_PATH . '/font-awesome/css/font-awesome.min.css' );
 
 	// queue up jQuery
-	wp_enqueue_script('oor-jquery', OOR_VENDOR_PATH . '/jquery/dist/jquery.min.js', null, null, true);
+	wp_enqueue_script( 'oor-jquery', OOR_VENDOR_PATH . '/jquery/dist/jquery.min.js', null, null, true );
 
 	// queue up Modernizr
-	wp_enqueue_script('oor-modernizr', OOR_VENDOR_PATH . '/modernizr/modernizr.js');
+	wp_enqueue_script( 'oor-modernizr', OOR_VENDOR_PATH . '/modernizr/modernizr.js' );
 
 	// queue up local scripts
 	$scripts = ['plugins' => '/plugins.js', 'main' => '/main.js'];
-	foreach ($scripts as $alias => $path) {
-		wp_enqueue_script($alias, OOR_JS_PATH . $path, null, null, true);
+	foreach ( $scripts as $alias => $path ) {
+		wp_enqueue_script( $alias, OOR_JS_PATH . $path, null, null, true );
 	}
 }
 
 if ( !is_admin() ) {
-	add_action('init', 'oor_enqueue_scripts');
+	add_action( 'init', 'oor_enqueue_scripts' );
 }
 
 remove_action( 'wp_head', 'wp_generator' );
