@@ -22,7 +22,7 @@ before_script:
   - vendor/bin/phpcs --config-set installed_paths `pwd`/wpcs
 
 script:
-  - vendor/bin/phpcs --standard=WordPress --extensions=php --ignore=*/vendor/* .
+  - vendor/bin/phpcs --standard=WordPress functions.php
 
 after_script:
   - rm -rf ./wpcs
