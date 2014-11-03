@@ -10,10 +10,10 @@ function wpbk_the_title_excerpt()
 {
 				$limit = 30;
 				if ( strlen( $title ) > $limit ) {
-								_e( esc_html( substr_replace(  $title, '...', $limit ) ) );
+								_e( esc_html( substr_replace( $title, '...', $limit ) ) );
 				} else {
-									_e( esc_html( $title ) );
-					}
+								_e( esc_html( $title ) );
+				}
 }
 
 /**
@@ -29,8 +29,8 @@ function wpbk_get_nav_note()
 								'<q>Brooklyn is not the easiest place to grow up in, although I wouldn\'t change that experience for anything.</q> - <cite><a href="http://www.neildiamond.com">Neil Diamond</a></cite>',
 								'<q>I didn\'t appreciate Brooklyn until I left it.</q> - <cite><a href="http://en.wikipedia.org/wiki/Rosie_Perez">Rosie Perez</a></cite>',
 				);
-					$note = __( esc_attr( $notes[ array_rand( $notes ) ] ) );
-					return $note;
+				$note = __( esc_attr( $notes[ array_rand( $notes ) ] ) );
+				return $note;
 }
 
 /**
@@ -38,25 +38,18 @@ function wpbk_get_nav_note()
  */
 function wpbk_enqueue_scripts()
 {
-				// get theme version
 				$theme = wp_get_theme();
 				$version = $theme->version;
-
-				// queue up styles
 				wp_enqueue_style( 'default', get_stylesheet_uri(), [], $version );
 				wp_enqueue_style( 'font-awesome', OOR_VENDOR_PATH . '/font-awesome/css/font-awesome.min.css' );
-
-				// queue up jQuery
 				wp_enqueue_script( 'oor-jquery', OOR_VENDOR_PATH . '/jquery/dist/jquery.min.js', null, null, true );
-
-				// queue up Modernizr
 				wp_enqueue_script( 'oor-modernizr', OOR_VENDOR_PATH . '/modernizr/modernizr.js' );
 
 				// queue up local scripts
 				$scripts = ['plugins' => '/plugins.js', 'main' => '/main.js'];
 				foreach ( $scripts as $alias => $path ) {
 								wp_enqueue_script( $alias, OOR_JS_PATH . $path, null, null, true );
-					}
+				}
 }
 
 if ( ! is_admin() ) {
